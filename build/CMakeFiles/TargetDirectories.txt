@@ -1,0 +1,12 @@
+/home/keerthan/cdproject/build/CMakeFiles/intrinsics_gen.dir
+/home/keerthan/cdproject/build/CMakeFiles/omp_gen.dir
+/home/keerthan/cdproject/build/CMakeFiles/acc_gen.dir
+/home/keerthan/cdproject/build/CMakeFiles/ComputationalIntensityPass.dir
+/home/keerthan/cdproject/build/CMakeFiles/install-ComputationalIntensityPass.dir
+/home/keerthan/cdproject/build/CMakeFiles/install-ComputationalIntensityPass-stripped.dir
+/home/keerthan/cdproject/build/CMakeFiles/edit_cache.dir
+/home/keerthan/cdproject/build/CMakeFiles/rebuild_cache.dir
+/home/keerthan/cdproject/build/CMakeFiles/list_install_components.dir
+/home/keerthan/cdproject/build/CMakeFiles/install.dir
+/home/keerthan/cdproject/build/CMakeFiles/install/local.dir
+/home/keerthan/cdproject/build/CMakeFiles/install/strip.dir
