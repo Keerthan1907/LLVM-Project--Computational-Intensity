@@ -66,7 +66,7 @@ extern "C" LLVM_ATTRIBUTE_WEAK ::llvm::PassPluginLibraryInfo llvmGetPassPluginIn
                 [](StringRef Name, FunctionPassManager &FPM,
                    ArrayRef<PassBuilder::PipelineElement>) {
                     errs() << ">>> Pipeline callback called with pass name: " << Name << "\n";
-                    if (Name == "comp-intensity") {
+                    if (Name == "analyze-computational-intensity") {
                         errs() << ">>> Match found! Adding ComputationalIntensityPass\n";
                         FPM.addPass(ComputationalIntensityPass());
                         return true;
@@ -77,3 +77,6 @@ extern "C" LLVM_ATTRIBUTE_WEAK ::llvm::PassPluginLibraryInfo llvmGetPassPluginIn
         }
     };
 }
+
+
+

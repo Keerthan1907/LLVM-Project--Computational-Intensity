@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload C Code</title>
+</head>
+<body>
+    <h1>Upload C File for Computational Intensity Analysis</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="code_file" accept=".c" required>
+        <input type="submit" value="Submit">
+    </form>
+
+    {% if output %}
+        <h2>Analysis Result:</h2>
+        <pre>{{ output }}</pre>
+    {% endif %}
+</body>
+</html>
