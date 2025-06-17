@@ -65,5 +65,9 @@ Analyzing Function: compute
 - Ratio: 1.000000e+00
 ```
 
+If the ratio exceeds 2.0, it will additionally print:
+```bash
+Function 'compute' has high computational intensity:
+```
 
 
