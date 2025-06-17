@@ -22,7 +22,7 @@ The pass helps developers understand whether a function is **compute-heavy** or 
 - C++ compiler (clang++-15)
 
 ### Step-by-Step Build
-**This command compiles ComputationalIntensityPass.cpp into a shared object (.so) file that can be loaded by opt:**
+***This command compiles ComputationalIntensityPass.cpp into a shared object (.so) file that can be loaded by opt:***
 ```bash
 clang++-15 -fPIC -shared -o ComputationalIntensityPass.so ../ComputationalIntensityPass.cpp \
 `llvm-config-15 --cxxflags --ldflags --system-libs --libs core passes analysis support`
@@ -34,7 +34,7 @@ clang++-15 -fPIC -shared -o ComputationalIntensityPass.so ../ComputationalIntens
 
 
 
-**This command compiles a C source file (test.c) into LLVM IR (.ll) using clang:**
+***This command compiles a C source file (test.c) into LLVM IR (.ll) using clang:***
 ```bash
 clang -O3 -S -emit-llvm ../tests/<testFile.c> -o ../tests/<testFile.c>.ll
 ```
