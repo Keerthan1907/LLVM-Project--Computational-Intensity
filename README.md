@@ -18,15 +18,22 @@ The pass helps developers understand whether a function is **compute-heavy** or 
 
 ## Building the Project
 ### Prerequisites
-LLVM 15 (ensure clang-15, opt, llvm-config-15 are available)
-
-C++ compiler (clang++-15)
+- LLVM 15 (ensure clang-15, opt, llvm-config-15 are available)
+- C++ compiler (clang++-15)
 
 ### Step-by-Step Build
+This command compiles ComputationalIntensityPass.cpp into a shared object (.so) file that can be loaded by opt:
 ```bash
 clang++-15 -fPIC -shared -o ComputationalIntensityPass.so ../ComputationalIntensityPass.cpp \
 `llvm-config-15 --cxxflags --ldflags --system-libs --libs core passes analysis support`
 ```
+- **-fPIC**: Generates position-independent code, required for shared libraries.
+
+- **-shared**: Builds a shared object .so file.
+
+- **llvm-config**-15: Supplies correct flags and libraries for LLVM 15.
+
+  - **Output**: ComputationalIntensityPass.so, which can be used with opt to run the pass.
 
 ```bash
 clang -O3 -S -emit-llvm ../tests/<testFile.c> -o ../tests/<testFile.c>.ll
