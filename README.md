@@ -16,18 +16,26 @@ The pass helps developers understand whether a function is **compute-heavy** or 
 - Computes ratio = `arithmeticOps / memoryOps`
 - Reports if the ratio > 2.0 as **high computational intensity**
 
+## Building the Project
+# Prerequisites
+LLVM 15 (ensure clang-15, opt, llvm-config-15 are available)
+
+C++ compiler (clang++-15)
+
+# Step-by-Step Build
 ```bash
 clang++-15 -fPIC -shared -o ComputationalIntensityPass.so ../ComputationalIntensityPass.cpp \
-    `llvm-config-15 --cxxflags --ldflags --system-libs --libs core passes analysis support`
+`llvm-config-15 --cxxflags --ldflags --system-libs --libs core passes analysis support`
 ```
 
 ```bash
-clang -S -emit-llvm ../tests/test.c -o ../tests/test.ll -O3
+clang -S -emit-llvm ../tests/<testFile.c> -o ../tests/<testFile.c>.ll -O3
 ```
 
 ```bash
 /usr/lib/llvm-15/bin/opt -load-pass-plugin ./ComputationalIntensityPass.so \
-  -passes='function(analyze-computational-intensity)' \
-  -disable-output ../tests/test.ll
+-passes='function(analyze-computational-intensity)' \
+-disable-output ../tests/<testFile.c>.ll
 ```
+
 
