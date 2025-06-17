@@ -17,19 +17,19 @@ The pass helps developers understand whether a function is **compute-heavy** or 
 - Reports if the ratio > 2.0 as **high computational intensity**
 
 ## Building the Project
-# Prerequisites
+### Prerequisites
 LLVM 15 (ensure clang-15, opt, llvm-config-15 are available)
 
 C++ compiler (clang++-15)
 
-# Step-by-Step Build
+### Step-by-Step Build
 ```bash
 clang++-15 -fPIC -shared -o ComputationalIntensityPass.so ../ComputationalIntensityPass.cpp \
 `llvm-config-15 --cxxflags --ldflags --system-libs --libs core passes analysis support`
 ```
 
 ```bash
-clang -S -emit-llvm ../tests/<testFile.c> -o ../tests/<testFile.c>.ll -O3
+clang -O3 -S -emit-llvm ../tests/<testFile.c> -o ../tests/<testFile.c>.ll
 ```
 
 ```bash
