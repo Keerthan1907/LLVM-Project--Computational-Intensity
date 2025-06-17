@@ -32,6 +32,7 @@ clang++-15 -fPIC -shared -o ComputationalIntensityPass.so ../ComputationalIntens
 - **llvm-config**-15: Supplies correct flags and libraries for LLVM 15.
 - **Output**: ComputationalIntensityPass.so, which can be used with opt to run the pass.
 
+
 This command compiles a C source file (test.c) into LLVM IR (.ll) using clang:
 ```bash
 clang -O3 -S -emit-llvm ../tests/<testFile.c> -o ../tests/<testFile.c>.ll
@@ -40,6 +41,7 @@ clang -O3 -S -emit-llvm ../tests/<testFile.c> -o ../tests/<testFile.c>.ll
 - **-emit-llvm**: Generate LLVM Intermediate Representation instead of a native binary.
 - **-O3**: Apply high-level optimizations.
 - **Output**: test.ll, the optimized LLVM IR file used for analysis by the custom LLVM pass
+
 
 This command runs the custom LLVM function pass on the generated .ll file:
 ```bash
