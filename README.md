@@ -19,3 +19,15 @@ The pass helps developers understand whether a function is **compute-heavy** or 
 ```bash
 clang++-15 -fPIC -shared -o ComputationalIntensityPass.so ../ComputationalIntensityPass.cpp \
     `llvm-config-15 --cxxflags --ldflags --system-libs --libs core passes analysis support`
+```
+
+```bash
+clang -S -emit-llvm ../tests/test.c -o ../tests/test.ll -O3
+```
+
+```bash
+/usr/lib/llvm-15/bin/opt -load-pass-plugin ./ComputationalIntensityPass.so \
+  -passes='function(analyze-computational-intensity)' \
+  -disable-output ../tests/test.ll
+```
+
